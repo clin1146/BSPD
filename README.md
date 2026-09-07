@@ -24,19 +24,11 @@ circuit — the circuit cuts power.
 
 ---
 
-## Reset behaviour
+## Functional block diagram
 
-Once the fault condition is no longer present, a **10-second timer** starts. If no
-fault condition occurs during that 10-second window, power is automatically
-restored.
-
-```mermaid
-stateDiagram-v2
-    direction LR
-    [*] --> PowerEnabled
-    PowerEnabled --> FaultActive: fault present 500 ms
-    FaultActive --> PowerCut: cut power
-    PowerCut --> Recovering: fault clears
-    Recovering --> PowerEnabled: 10 s, no fault
-    Recovering --> PowerCut: fault returns
-```
+![BSPD functional block diagram: the BPS and TPS sensor signals feed an AND stage
+(simultaneous brake and throttle); its output is OR'd with the SCS signal, which
+flags either sensor leaving the 0.5–4.5 V range. The combined fault passes through
+a 500 ms RC delay that latches Power Off, and drives an inverter into a 555-based
+10 s timer that restores Power On once the fault has been clear for the full
+window.](docs/system-block-diagram.png)
