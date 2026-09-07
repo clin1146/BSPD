@@ -24,6 +24,15 @@ circuit — the circuit cuts power.
 
 ---
 
+## Reset behaviour
+
+Once the fault condition is no longer true, a 10-second timer starts. If no fault
+recurs within that 10-second window, power resets automatically. If a fault recurs
+during the window, the timer restarts, so power stays cut until a full 10 seconds
+passes with no fault present.
+
+---
+
 ## Functional block diagram
 
 ![BSPD functional block diagram: the BPS and TPS sensor signals feed an AND stage
