@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "BSPD_footprints")(type "KiCad")(uri "${KIPRJMOD}/footprints/BSPD_footprints.pretty")(options "")(descr ""))
+)

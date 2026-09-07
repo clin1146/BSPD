@@ -1,0 +1,17 @@
+# KiCad auto-generated / local files
+*-backups/
+fp-info-cache
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+*.tmp
+*~
+*.lck
+~*.lck
+
+# KiCad per-user local settings (optional to keep; ignored by default)
+*.kicad_prl
+
+# OS clutter
+Thumbs.db
+.DS_Store
